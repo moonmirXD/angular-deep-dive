@@ -9,7 +9,9 @@ import { DashboardItemComponent } from '../dashboard-item/dashboard-item.compone
 })
 export class ServerStatusComponent {
   currentStatus: 'online' | 'offline' | 'unknown' = 'online';
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     setInterval(() => {
       const rnd = Math.random();
       if (rnd < 0.5) {
