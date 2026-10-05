@@ -12,8 +12,8 @@ import { ButtonComponent } from '../../../shared/button/button.component';
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketComponent {
-  onSubmit(inputTitle: HTMLInputElement): void {
-    const enteredTitle = inputTitle.value;
-    console.log(enteredTitle);
+  onSubmit(title: string, text: string): void {
+    console.log(title);
+    console.log(text);
   }
 }
