@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DashboardItemComponent } from '../dashboard-item/dashboard-item.component';
 import { NewTicketComponent } from './new-ticket/new-ticket.component';
+import { Ticket } from './ticket/ticket.model';
 
 @Component({
   selector: 'app-tickets',
@@ -9,4 +9,17 @@ import { NewTicketComponent } from './new-ticket/new-ticket.component';
   styleUrl: './tickets.component.css',
   imports: [NewTicketComponent],
 })
-export class TicketsComponent {}
+export class TicketsComponent {
+  tickets: Ticket[] = [];
+
+  onAdd(ticketData: { title: string; text: string }) {
+    const ticket: Ticket = {
+      id: Math.random().toString(),
+      title: ticketData.title,
+      request: ticketData.text,
+      status: 'open',
+    };
+
+    this.tickets.push(ticket);
+  }
+}
